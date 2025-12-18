@@ -53,7 +53,7 @@ const initialState: UsedPhonesState = {
 
 export const fetchUsedPhones = createAsyncThunk(
     'usedPhones/fetchAll',
-    async (status?: string, { rejectWithValue }) => {
+    async (status: string | undefined, { rejectWithValue }) => {
         try {
             const queryParams = status ? `?status=${status}` : '';
             const response = await fetch(`/api/used-phones${queryParams}`);

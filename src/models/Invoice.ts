@@ -125,7 +125,7 @@ InvoiceSchema.index({ dueDate: 1 });
 InvoiceSchema.index({ createdAt: -1 });
 
 // Pre-save middleware to update status based on payment
-InvoiceSchema.pre<IInvoice>('save', function (next) {
+InvoiceSchema.pre('save', async function () {
     if (this.paidAmount >= this.totalAmount) {
         this.status = 'Paid';
         if (!this.paidDate) {
@@ -136,7 +136,6 @@ InvoiceSchema.pre<IInvoice>('save', function (next) {
     } else {
         this.status = 'Overdue';
     }
-    next();
 });
 
 const Invoice: Model<IInvoice> = mongoose.models.Invoice || mongoose.model<IInvoice>('Invoice', InvoiceSchema);

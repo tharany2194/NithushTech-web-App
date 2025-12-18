@@ -61,7 +61,7 @@ export default function UsedPhonesPage() {
                     <p className="text-sm text-green-600">Sold</p>
                     <p className="text-2xl font-bold text-green-900">{stats.sold}</p>
                 </div>
-                <div className="bg-gradient-to-br from-slate-800 to-slate-900 rounded-xl p-4 text-white">
+                <div className="bg-linear-to-br from-slate-800 to-slate-900 rounded-xl p-4 text-white">
                     <p className="text-sm text-slate-300">Total Profit</p>
                     <p className="text-2xl font-bold">{formatCurrency(stats.totalProfit)}</p>
                 </div>

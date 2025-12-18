@@ -149,7 +149,7 @@ export default function BuyPhonePage() {
                             value={formData.notes}
                             onChange={handleChange}
                             placeholder="Additional notes..."
-                            className="input min-h-[80px]"
+                            className="input min-h-20"
                         />
                     </div>
 

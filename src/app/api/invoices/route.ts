@@ -51,9 +51,9 @@ export async function POST(request: NextRequest) {
         const data = await request.json();
 
         const invoice = await Invoice.create(data);
-        await invoice.populate('customer', 'name phone email');
+        const populatedInvoice = await Invoice.findById(invoice._id).populate('customer', 'name phone email');
 
-        return NextResponse.json({ invoice }, { status: 201 });
+        return NextResponse.json({ invoice: populatedInvoice }, { status: 201 });
     } catch (error: any) {
         console.error('Create invoice error:', error);
         return NextResponse.json(

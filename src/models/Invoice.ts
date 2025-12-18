@@ -1,4 +1,4 @@
-import mongoose, { Schema, Document, Model, CallbackError } from 'mongoose';
+import mongoose, { Schema, Document, Model } from 'mongoose';
 
 export interface IInvoiceItem {
     description: string;
@@ -124,8 +124,8 @@ InvoiceSchema.index({ status: 1 });
 InvoiceSchema.index({ dueDate: 1 });
 InvoiceSchema.index({ createdAt: -1 });
 
-// Pre-save hook to update status based on payment
-InvoiceSchema.pre('save', function (next: (err?: CallbackError) => void) {
+// Pre-save middleware to update status based on payment
+InvoiceSchema.pre<IInvoice>('save', function (next) {
     if (this.paidAmount >= this.totalAmount) {
         this.status = 'Paid';
         if (!this.paidDate) {

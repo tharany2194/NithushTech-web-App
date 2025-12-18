@@ -68,7 +68,7 @@ const initialState: RepairsState = {
 
 export const fetchRepairs = createAsyncThunk(
     'repairs/fetchAll',
-    async (params?: { status?: string; search?: string }, { rejectWithValue }) => {
+    async (params: { status?: string; search?: string } | undefined, { rejectWithValue }) => {
         try {
             const queryParams = new URLSearchParams();
             if (params?.status) queryParams.set('status', params.status);

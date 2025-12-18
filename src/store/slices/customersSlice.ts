@@ -30,7 +30,7 @@ const initialState: CustomersState = {
 
 export const fetchCustomers = createAsyncThunk(
     'customers/fetchAll',
-    async (search?: string, { rejectWithValue }) => {
+    async (search: string | undefined, { rejectWithValue }) => {
         try {
             const queryParams = search ? `?search=${encodeURIComponent(search)}` : '';
             const response = await fetch(`/api/customers${queryParams}`);

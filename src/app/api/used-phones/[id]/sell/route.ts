@@ -59,7 +59,7 @@ export async function POST(
             customer: buyer._id,
             items: [
                 {
-                    description: `${phone.brand} ${phone.model} (IMEI: ${phone.imei})`,
+                    description: `${phone.brand} ${phone.phoneModel} (IMEI: ${phone.imei})`,
                     quantity: 1,
                     unitPrice: sellPrice,
                     total: sellPrice,

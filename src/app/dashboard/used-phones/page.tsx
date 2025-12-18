@@ -120,7 +120,7 @@ export default function UsedPhonesPage() {
                                     <tr key={phone._id}>
                                         <td>
                                             <div>
-                                                <p className="font-medium">{phone.brand} {phone.model}</p>
+                                                <p className="font-medium">{phone.brand} {phone.phoneModel}</p>
                                                 <p className="text-sm text-gray-500">{phone.condition}</p>
                                             </div>
                                         </td>

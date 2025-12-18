@@ -5,7 +5,7 @@ import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 export interface UsedPhone {
     _id: string;
     brand: string;
-    model: string;
+    phoneModel: string;
     imei: string;
     condition: string;
     buyPrice: number;

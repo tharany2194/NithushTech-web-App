@@ -16,7 +16,7 @@ export default function BuyPhonePage() {
 
     const [formData, setFormData] = useState({
         brand: '',
-        model: '',
+        phoneModel: '',
         imei: '',
         condition: 'Good',
         buyPrice: '',
@@ -92,8 +92,8 @@ export default function BuyPhonePage() {
                             <label className="label">Model *</label>
                             <input
                                 type="text"
-                                name="model"
-                                value={formData.model}
+                                name="phoneModel"
+                                value={formData.phoneModel}
                                 onChange={handleChange}
                                 placeholder="e.g., iPhone 12 Pro"
                                 className="input"

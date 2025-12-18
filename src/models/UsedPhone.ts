@@ -3,7 +3,7 @@ import mongoose, { Schema, Document, Model } from 'mongoose';
 export interface IUsedPhone extends Document {
     _id: mongoose.Types.ObjectId;
     brand: string;
-    model: string;
+    phoneModel: string;
     imei: string;
     condition: string;
     buyPrice: number;
@@ -23,7 +23,7 @@ const UsedPhoneSchema = new Schema<IUsedPhone>(
             required: [true, 'Brand is required'],
             trim: true,
         },
-        model: {
+        phoneModel: {
             type: String,
             required: [true, 'Model is required'],
             trim: true,

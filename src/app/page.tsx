@@ -35,7 +35,7 @@ export default function LoginPage() {
   return (
     <div className="min-h-screen bg-linear-to-br from-slate-950 via-slate-900 to-slate-950 flex items-center justify-center p-4 overflow-hidden">
       {/* Animated Background Effects */}
-      <div className="absolute inset-0 overflow-hidden">
+      <div className="absolute inset-0 overflow-hidden w-full">
         {/* Gradient Orbs */}
         <div className="absolute top-0 -left-40 w-80 h-80 bg-blue-500/30 rounded-full blur-[100px] animate-pulse" />
         <div className="absolute top-1/2 -right-40 w-96 h-96 bg-purple-500/20 rounded-full blur-[120px] animate-pulse" style={{ animationDelay: '1s' }} />
